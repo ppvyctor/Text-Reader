@@ -16,8 +16,6 @@ This code is open source, who want improve this program, can do! :)
      - ``` bash
        pip install pdf2image
      - ``` bash
-       pip install tempfile
-     - ``` bash
        pip install docx
      - IF NECESSARY:
           ``` bahs
