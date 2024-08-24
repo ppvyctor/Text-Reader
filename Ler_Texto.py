@@ -118,10 +118,7 @@ with left:
     else:
         voz = 2
 
-    if not file is None: 
-        st.markdown("##### **O arquivo enviado não tem texto ou não consegue-se adquirir o texto** ")
-    
-    elif texto == "" or texto.replace(" ", "") == "":
+    if texto == "" or texto.replace(" ", "") == "":
         st.markdown("##### **Digite ou cole um texto ao lado para liberar o botão do áudio.**")
     
     else:
