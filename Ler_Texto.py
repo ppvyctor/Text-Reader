@@ -71,7 +71,6 @@ with right:
             pagina = documento.pages[pag_atual]
             texto = pagina.extract_text()
             
-            
             with tempfile.NamedTemporaryFile(delete = False, suffix = ".pdf") as temporariefile:
                 temporariefile.write(file.getvalue())
                 temporariefile.flush()
@@ -119,7 +118,11 @@ with left:
     else:
         voz = 2
 
-    if texto == "" or texto.replace(" ", "") == "": st.markdown("##### **Digite ou cole um texto ao lado para liberar o botão do áudio.**")
+    if not file is None: 
+        st.markdown("##### **O arquivo enviado não tem texto ou não consegue-se adquirir o texto** ")
+    
+    elif texto == "" or texto.replace(" ", "") == "":
+        st.markdown("##### **Digite ou cole um texto ao lado para liberar o botão do áudio.**")
     
     else:
         # Adicionando o botão para ler o texto
