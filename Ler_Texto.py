@@ -69,7 +69,7 @@ with right:
             pag_atual = st.slider("Página", min_value = 1, max_value = num_paginas, value = 1, step = 1) - 1
             
             pagina = documento.pages[pag_atual]
-            texto = pagina.extract_text()
+            texto = pagina.extract_text().replace("-\n", "")
             
             with tempfile.NamedTemporaryFile(delete = False, suffix = ".pdf") as temporariefile:
                 temporariefile.write(file.getvalue())
@@ -93,6 +93,7 @@ with right:
                 st.write(t)
             
             texto = "\n".join(texto)
+            texto = texto.replace("-\n", " ")
 
 path_picture = ""
     
